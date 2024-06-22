@@ -52,7 +52,7 @@ class AudioMelSpec():
         self._mel_basis_create()
 
     def _mel_basis_create(self):
-        self._mel_basis     = librosa.filters.mel(self.sample_rate, self.n_fft, self.num_mels, self.fmin, self.fmax)
+        self._mel_basis     = librosa.filters.mel(sr=self.sample_rate, n_fft=self.n_fft, num_mels=self.num_mels, fmin=self.fmin, fmax=self.fmax)
         self._inv_mel_basis = np.linalg.pinv(self._mel_basis)
 
     def _stft(self, y):
